@@ -3,7 +3,7 @@ package com.example;
 import java.util.Random;
 
 public class JokesProvider {
-    String[]Jokes={
+     static String[]Jokes={
             "Q: what`s the object oriented way to get wealthy? " +
                     "\n A: Inheritance "
             ,
@@ -23,7 +23,7 @@ public class JokesProvider {
 
     };
 
-    String getJoke(){
+   public static String getJoke(){
         Random rn = new Random();
         int randomIndex = rn.nextInt(Jokes.length) ;
         return Jokes[randomIndex];
