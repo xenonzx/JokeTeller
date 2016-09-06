@@ -10,16 +10,15 @@ public class JokesProvider {
             "Q: Why do programmers always mix up Halloween and Christmas?" +
                     "\n" +
                     "A: Because Oct 31 == Dec 25!"
-            ,"“Knock, knock.”\n" +
+            ,"Knock, knock."+
             "\n" +
-            "“Who’s there?”\n" +
+            "Who’s there?" +
             "\n" +
-            "very long pause….\n" +
+            "very long pause…." +
             "\n" +
-            "“Java.”\n" +
+            "Java."+
             "\n" +
-            ":-o\n" +
-            "\n"
+            ":-o"
 
     };
 
