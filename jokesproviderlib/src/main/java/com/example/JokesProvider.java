@@ -1,5 +1,7 @@
 package com.example;
 
+import java.util.Random;
+
 public class JokesProvider {
     String[]Jokes={
             "Q: what`s the object oriented way to get wealthy? " +
@@ -21,5 +23,10 @@ public class JokesProvider {
 
     };
 
+    String getJoke(){
+        Random rn = new Random();
+        int randomIndex = rn.nextInt(Jokes.length) ;
+        return Jokes[randomIndex];
+    }
 
 }
