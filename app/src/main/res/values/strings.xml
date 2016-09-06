@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">JokeTellerFinalProject</string>
+    <string name="tell_jokes">push for jokes</string>
 </resources>
