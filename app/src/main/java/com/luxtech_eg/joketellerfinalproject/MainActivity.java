@@ -1,12 +1,13 @@
 package com.luxtech_eg.joketellerfinalproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.example.JokesProvider;
+import com.luxtech_eg.jokesreceivingactivity.JokeReceivingActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,8 +23,15 @@ public class MainActivity extends AppCompatActivity {
         jokesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this,JokesProvider.getJoke(),Toast.LENGTH_LONG).show();
+
+                //Toast.makeText(MainActivity.this,JokesProvider.getJoke(),Toast.LENGTH_LONG).show();
+                startActivity(buildJokeActivity(JokesProvider.getJoke()));
             }
         });
+    }
+    Intent buildJokeActivity(String joke){
+        Intent intent= new Intent(MainActivity.this, JokeReceivingActivity.class);
+        intent.putExtra(getString(R.string.joke_key),joke);
+        return  intent;
     }
 }

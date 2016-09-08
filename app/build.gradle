@@ -26,6 +26,8 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.jakewharton:butterknife:8.4.0'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
-
+    // java lib dependency
     compile project(path: ':jokesproviderlib')
+    // android lib dependency
+    compile project(path: ':jokes_receiving_activity')
 }

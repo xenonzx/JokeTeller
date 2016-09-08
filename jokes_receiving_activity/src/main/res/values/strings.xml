@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Jokes Receiving Activity</string>
+
+    <string name="joke_key">joke</string>
+
+    <string name="default_joke">haha , no jokes were passed</string>
 </resources>
