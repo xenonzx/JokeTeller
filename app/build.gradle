@@ -11,6 +11,7 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        buildConfigField "String", "SERVER_URL", "\"http://http://localhost:8080/_ah/admin:8080\""
     }
     buildTypes {
         release {
@@ -28,7 +29,7 @@ dependencies {
     compile project(path: ':jokesproviderlib')
     // android lib dependency
     compile project(path: ':jokes_receiving_activity')
-    compile 'com.android.support:appcompat-v7:24.0.0-alpha2'
+    compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.jakewharton:butterknife:8.4.0'
     compile project(path: ':backend', configuration: 'android-endpoints')
 }
