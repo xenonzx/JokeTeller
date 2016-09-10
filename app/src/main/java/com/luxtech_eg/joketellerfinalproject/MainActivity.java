@@ -8,13 +8,12 @@ import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.JokesProvider;
 import com.luxtech_eg.jokesreceivingactivity.JokeReceivingActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  implements JokeReceivedListener{
     @BindView(R.id.b_tell_jokes)
     Button jokesButton;
     @Override
@@ -26,8 +25,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                //Toast.makeText(MainActivity.this,JokesProvider.getJoke(),Toast.LENGTH_LONG).show();
-                startActivity(buildJokeActivity(JokesProvider.getJoke()));
+                new EndpointsAsyncTask(MainActivity.this).execute(new Pair<Context, String>(MainActivity.this, "Dakhakhny"));
             }
         });
 
@@ -36,12 +34,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Dakhakhny"));
+        //new EndpointsAsyncTask(this).execute(new Pair<Context, String>(this, "Dakhakhny"));
     }
 
     Intent buildJokeActivity(String joke){
         Intent intent= new Intent(MainActivity.this, JokeReceivingActivity.class);
         intent.putExtra(getString(R.string.joke_key),joke);
         return  intent;
+    }
+
+
+    @Override
+    public void onJokeReceived(String joke) {
+        startActivity(buildJokeActivity(joke));
     }
 }

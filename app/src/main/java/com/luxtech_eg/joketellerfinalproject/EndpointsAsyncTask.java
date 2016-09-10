@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.util.Pair;
-import android.widget.Toast;
 
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
@@ -20,6 +19,12 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
     private Context context;
     String SERVER_URL= BuildConfig.SERVER_URL;
     String TAG=EndpointsAsyncTask.class.getSimpleName();
+
+    JokeReceivedListener jokeReceivedListener;
+    EndpointsAsyncTask(JokeReceivedListener jokeReceivedListener){
+        this.jokeReceivedListener= jokeReceivedListener;
+
+    }
     @Override
     protected String doInBackground(Pair<Context, String>... params) {
         if(myApiService == null) {  // Only do this once
@@ -44,6 +49,8 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
 
     @Override
     protected void onPostExecute(String result) {
-        Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+       // Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+        Log.v(TAG,"joke received "+result);
+        jokeReceivedListener.onJokeReceived(result);
     }
 }
