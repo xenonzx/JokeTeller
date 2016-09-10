@@ -11,7 +11,7 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
-        buildConfigField "String", "SERVER_URL", "\"http://http://localhost:8080/_ah/admin:8080\""
+        buildConfigField "String", "SERVER_URL", "\"http://192.168.1.4:8080\""
     }
     buildTypes {
         release {
