@@ -6,6 +6,7 @@
 
 package com.luxtech.backend;
 
+import com.example.JokesProvider;
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
@@ -26,7 +27,7 @@ public class MyEndpoint {
     @ApiMethod(name = "tellJoke")
     public MyBean tellJoke() {
         MyBean response = new MyBean();
-        response.setData("joke  ");
+        response.setData(JokesProvider.getJoke());
 
         return response;
     }
