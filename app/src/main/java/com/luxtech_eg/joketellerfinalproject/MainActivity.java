@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
+        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Dakhakhny"));
     }
 
     Intent buildJokeActivity(String joke){

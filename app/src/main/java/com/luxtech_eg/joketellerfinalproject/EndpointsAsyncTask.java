@@ -8,8 +8,6 @@ import android.widget.Toast;
 
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
-import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
-import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 import com.luxtech.backend.myApi.MyApi;
 
 import java.io.IOException;
@@ -26,18 +24,8 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
     protected String doInBackground(Pair<Context, String>... params) {
         if(myApiService == null) {  // Only do this once
             Log.v(TAG,SERVER_URL+"/_ah/api/");
-            MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
-                    new AndroidJsonFactory(), null)
-                    // options for running against local devappserver
-                    // - 10.0.2.2 is localhost's IP address in Android emulator
-                    // - turn off compression when running against local devappserver
-                    .setRootUrl(SERVER_URL+"/_ah/api/")
-                    .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
-                        @Override
-                        public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest) throws IOException {
-                            abstractGoogleClientRequest.setDisableGZipContent(true);
-                        }
-                    });
+            MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), null)
+                    .setRootUrl("https://nano-degree-gradle-course.appspot.com/_ah/api/");
             // end options for devappserver
 
             myApiService = builder.build();
@@ -47,6 +35,7 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
         String name = params[0].second;
 
         try {
+            Log.v(TAG,"service url "+myApiService.sayHi(name).buildHttpRequestUrl());
             return myApiService.sayHi(name).execute().getData();
         } catch (IOException e) {
             return e.getMessage();
