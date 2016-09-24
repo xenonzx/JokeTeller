@@ -42,13 +42,19 @@ class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
             Log.v(TAG,"service url "+myApiService.tellJoke().buildHttpRequestUrl());
             return myApiService.tellJoke().execute().getData();
         } catch (IOException e) {
-            return e.getMessage();
+            Log.d(TAG, e.getMessage());
+            return null;
+        }catch (Exception e){
+            Log.d(TAG, e.getMessage());
+            return null;
+
         }
     }
     @Override
     protected void onPostExecute(String result) {
        // Toast.makeText(context, result, Toast.LENGTH_LONG).show();
         Log.v(TAG,"joke received "+result);
+        // todo if result null listner error
         jokeReceivedListener.onJokeReceived(result);
     }
 }
