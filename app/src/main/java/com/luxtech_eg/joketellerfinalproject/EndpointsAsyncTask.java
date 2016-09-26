@@ -13,14 +13,14 @@ import java.io.IOException;
 /**
  * Created by ahmed on 10/09/16.
  */
-class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
+public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
     private static MyApi myApiService = null;
     private Context context;
     String SERVER_URL= BuildConfig.SERVER_URL;
     String TAG=EndpointsAsyncTask.class.getSimpleName();
 
     JokeReceivedListener jokeReceivedListener;
-    EndpointsAsyncTask(JokeReceivedListener jokeReceivedListener){
+    public EndpointsAsyncTask(JokeReceivedListener jokeReceivedListener){
         this.jokeReceivedListener= jokeReceivedListener;
 
     }
