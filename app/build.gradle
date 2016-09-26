@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
+def flavor
 
 android {
     compileSdkVersion 23
@@ -23,10 +24,12 @@ android {
         free {
             applicationId "com.luxtech_eg.joketellerfinalproject.free"
             versionName "1.0-free"
+            flavor="free"
         }
         paid {
             applicationId "com.luxtech_eg.joketellerfinalproject.paid"
             versionName "1.0-paid"
+            flavor="paid"
         }
     }
 }
@@ -49,6 +52,9 @@ dependencies {
 
     //Firebase admob for free only
     freeCompile 'com.google.firebase:firebase-ads:9.6.0'
+    compile 'com.google.android.gms:play-services:9.6.0'
 }
 
+if(flavor=="free"){
 apply plugin: 'com.google.gms.google-services'
+}
