@@ -29,11 +29,12 @@ public class MainActivity extends AppCompatActivity  implements JokeReceivedList
             @Override
             public void onClick(View view) {
 
+
                 new EndpointsAsyncTask(MainActivity.this).execute();
             }
         });
 
-        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdView mAdView = com.luxtech_eg.joketellerfinalproject.AdsHelper.getAdView(this);
         AdRequest adRequest = new AdRequest.Builder().build();
         if(mAdView!=null){
             Log.v(TAG,"mAdView exists   ");
