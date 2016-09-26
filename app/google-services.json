@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "1000536836797",
+    "firebase_url": "https://admob-app-id-5079986161.firebaseio.com",
+    "project_id": "admob-app-id-5079986161",
+    "storage_bucket": "admob-app-id-5079986161.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1000536836797:android:5fe9d1694a9a148d",
+        "android_client_info": {
+          "package_name": "com.luxtech_eg.joketellerfinalproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1000536836797-uoj0nb54h3725tdvhq3pdnq037hckuba.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbB5XFxSKXU0F6-dxLTOxRVt1RD2CI4_g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1000536836797:android:0b9ee3a5c44258f8",
+        "android_client_info": {
+          "package_name": "com.luxtech_eg.joketellerfinalproject.free"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1000536836797-uoj0nb54h3725tdvhq3pdnq037hckuba.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbB5XFxSKXU0F6-dxLTOxRVt1RD2CI4_g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
